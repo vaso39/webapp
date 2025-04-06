@@ -1,0 +1,147 @@
+.main-container > .navContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.125rem 1rem;
+  background-color: theme("colors.lightDark");
+  position: sticky;
+  z-index: 9999;
+  top: 0;
+}
+@media (min-width: 768px) {
+  .main-container > .navContainer {
+    width: 94%;
+    margin-inline: auto;
+    position: relative;
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
+  .main-container > .navContainer > .myNavlist {
+    display: flex;
+    flex-direction: row;
+    -moz-column-gap: clamp(1.5rem, 1.55vw, 1.6rem);
+         column-gap: clamp(1.5rem, 1.55vw, 1.6rem);
+  }
+}
+@media (min-width: 1440px) {
+  .main-container > .navContainer {
+    position: fixed;
+    left: 1%;
+    width: 6rem;
+    height: 96dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.main-container > .navContainer > .myNavlist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+@media (min-width: 1440px) {
+  .main-container > .navContainer > .myNavlist {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+}
+.main-container > .navContainer > div.imageContainer {
+  border: 1px solid theme("colors.white");
+  width: clamp(1.5rem, 1.51vw, 1.52rem);
+  height: clamp(1.5rem, 1.51vw, 1.52rem);
+  border-radius: 50%;
+}
+@media (min-width: 768px) {
+  .main-container > .navContainer > div.imageContainer {
+    width: clamp(2.5rem, 2.5vw, 2.5rem);
+    height: clamp(2.5rem, 2.5vw, 2.5rem);
+  }
+}
+@media (min-width: 1440px) {
+  .main-container > .navContainer > div.imageContainer {
+    position: absolute;
+    bottom: 2.5%;
+  }
+}
+.main-container > .entertainmentSection {
+  position: relative;
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .main-container > .entertainmentSection {
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .main-container > .entertainmentSection {
+    margin-top: 1rem;
+    position: absolute;
+    left: 8.5rem;
+    width: 90%;
+  }
+}
+@media (min-width: 1440px) {
+  .main-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.preloader-container {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+.preloader-container > .wrap > .ball {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: theme("colors.red");
+  opacity: 0.8;
+  display: inline-block;
+  margin-top: 6rem;
+  border-radius: 50%;
+}
+
+.ball:nth-child(1) {
+  animation: bounce 3s -0.32s infinite alternate;
+}
+
+.ball:nth-child(2) {
+  animation: bounce 3s -0.16s infinite alternate;
+}
+
+.ball:nth-child(3) {
+  animation: bounce 3s -0.25s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80%, 100% {
+    transform: scale(0);
+  }
+}
+.main-container.loading .navContainer,
+.main-container.loading .entertainmentSection {
+  display: none;
+}
+
+.main-container.loading {
+  opacity: 0.7; /* Adjust the opacity as needed */
+  pointer-events: none; /* Disable interactions while loading */
+}/*# sourceMappingURL=entertainmentStyles.css.map */

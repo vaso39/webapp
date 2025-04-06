@@ -1,0 +1,209 @@
+@mixin flexComp($direc){
+    display: flex;
+    flex-direction: $direc;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex($direc){
+    display: flex;
+    flex-direction: $direc;
+}
+
+
+@mixin Grid(){
+    display: grid;
+    place-items: center;
+}
+
+@mixin fontStyle(){
+    font-family: theme("fonts.fontFamily");
+}
+
+@mixin LoginSignUpHeaderStyle(){
+    @include fontStyle();
+    font-weight: theme("fonts.fontWeight.light");
+    color: theme("colors.white");
+    letter-spacing: -0.5px;
+    font-size: clamp(2rem , 2.1vw,2.15rem);
+    line-height: auto;
+}
+
+@mixin LogInSignUpContainer(){
+    width: 87.2%;
+    height: auto;
+    border-radius: 1rem;
+    background-color: theme("colors.lightDark");
+
+
+    @media (min-width:768px) {
+        width: 25rem;
+        height: auto;   
+    }
+}
+
+@mixin inputStyle(){
+    width: 100%;
+    height: auto;
+    outline: none;
+    border-bottom: 1px solid theme("colors.lightGrey");
+    color:theme("colors.lightGrey");
+    background-color: transparent;
+    padding-bottom: 0.85rem;
+    font-weight: theme("fonts.fontWeight.light");
+
+    &:focus {
+        color: theme("colors.white");
+        border-bottom-color: white;
+    }
+    
+    &:not(:placeholder-shown) {
+        color: theme("colors.white");
+        border-bottom-color: white;
+        caret-color: theme("colors.red");
+    }
+}
+
+@mixin AccountBtnStyle(){
+    width: 100%;
+    height: 3rem;
+    @include flexComp(column);
+    color: theme("colors.white");
+    background-color: theme("colors.red");
+    border-radius: 0.5rem;
+    @include fontStyle();
+    font-size: clamp(0.9375rem , 0.95vw, 0.96rem);
+    font-weight: theme("fonts.fontWeight.light");
+    line-height: auto;
+
+    &:hover , :active{
+        background-color: theme("colors.white");
+        color: theme("colors.lightDark");
+        transition:all 0.3s;
+        cursor: pointer;
+    }
+
+}
+
+@mixin LoginSignUpStyle(){
+    color: theme("colors.white");
+    font-size: clamp(0.9375rem , 0.95vw, 0.96rem);
+    @include fontStyle();
+    font-weight: theme("fonts.fontWeight.light");
+    text-align: center;
+}
+
+@mixin errorStyle(){
+    color:theme("colors.red");
+    font-size: clamp(0.8125rem, 0.82vw, 0.82rem);
+}
+
+@mixin iconStyles(){
+    width: 1rem;
+    height: 1rem;
+
+    @media (min-width:768px) {
+        width: 1.25rem;
+        height: 1.25rem;
+        
+    }
+}
+
+@mixin avatarIcon(){
+    border: 1px solid theme("colors.white");
+    width: clamp(1.5rem , 1.51vw, 1.52rem);
+    height: clamp(1.5rem , 1.51vw, 1.52rem);
+    border-radius: 50%;
+
+
+    @media (min-width:768px) {
+        width: clamp(2.5rem, 2.5vw, 2.5rem);
+        height: clamp(2.5rem, 2.5vw, 2.5rem); 
+    }
+}
+
+@mixin h1Style(){
+    font-size: clamp(1.25rem , 1.25vw, 1.28rem);
+    @include fontStyle();
+    font-weight: theme("fonts.fontWeight.light");
+    color: theme("colors.white");
+    line-height: auto;
+    letter-spacing: -0.31px;
+
+    @media (min-width:768px) {
+        letter-spacing: -0.5px;
+        font-size: clamp(2rem, 2.05vw , 2.1rem);   
+    }
+}
+
+@mixin bookmarkContainerStyle(){
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: theme("colors.lightGrey");
+    @include flexComp(column);
+
+    &:hover, :active{
+        background-color: rgba(255,255,255,0.8);
+        > img{
+            filter : invert(1) brightness(0)
+        }
+        
+    }
+}
+
+@mixin playContainer(){
+    width: 5.2rem;
+    height: 2.5rem;
+    border-radius: 3rem;
+    @include flexComp(row);
+    background-color: rgba(255,255,255,0.3);
+    @include fontStyle();
+    padding: 0.5rem 0.5rem;
+    justify-content: space-between;
+    color: theme("colors.white");
+    font-weight: theme("fonts.fontWeight.med");
+    font-size: clamp(0.95rem , 0.96vw , 0.96rem);
+    visibility: hidden;
+
+    @media (min-width:768px) {
+        width: 6rem;
+        font-size: clamp(1.125rem , 1.15vw , 1.15rem);
+    }
+}
+
+@mixin ovalDotStyle(){
+    width: 0.1875rem;
+    height: 0.1875rem;
+    border-radius: 50%;
+    background-color:rgba(255,255,255,0.7);
+    @include flexComp(column);
+
+}
+
+@mixin movieDescription(){
+    color: rgba(255,255,255,0.7);
+    @include fontStyle();
+    font-weight: theme("fonts.fontWeight.light");
+    font-size: clamp(0.75rem, 0.77vw , 0.78rem);
+    @include flexComp(row);
+    justify-content: flex-start;
+    column-gap: 0.3rem;
+
+    @media (min-width:768px) {
+        font-size: clamp(0.9375rem, 0.95vw , 0.95rem);
+    }
+
+}
+
+@mixin movieTitle(){
+    color: theme("colors.white");
+    @include fontStyle();
+    font-weight: theme("fonts.fontWeight.med");
+    font-size: clamp(0.9375rem, 0.95vw , 0.95rem);
+
+    @media (min-width:768px) {
+        font-size: clamp(1.5rem, 1.52vw , 1.53rem);
+    }
+
+}

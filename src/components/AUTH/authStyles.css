@@ -1,0 +1,142 @@
+body {
+  background-color: theme("colors.darkBlue");
+}
+
+.main-body-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+.main-body-container > header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  width: 87.2%;
+  height: auto;
+  border-radius: 1rem;
+  background-color: theme("colors.lightDark");
+  row-gap: 1rem;
+  padding: 1.5rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .login-form-container {
+    width: 25rem;
+    height: auto;
+  }
+}
+.login-form-container > h1 {
+  font-family: theme("fonts.fontFamily");
+  font-weight: theme("fonts.fontWeight.light");
+  color: theme("colors.white");
+  letter-spacing: -0.5px;
+  font-size: clamp(2rem, 2.1vw, 2.15rem);
+  line-height: auto;
+}
+.login-form-container > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.login-form-container > form > .email-field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.login-form-container > form > .email-field > label {
+  position: relative;
+}
+.login-form-container > form > .email-field > label > input {
+  width: 100%;
+  height: auto;
+  outline: none;
+  border-bottom: 1px solid theme("colors.lightGrey");
+  color: theme("colors.lightGrey");
+  background-color: transparent;
+  padding-bottom: 0.85rem;
+  font-weight: theme("fonts.fontWeight.light");
+}
+.login-form-container > form > .email-field > label > input:focus {
+  color: theme("colors.white");
+  border-bottom-color: white;
+}
+.login-form-container > form > .email-field > label > input:not(:-moz-placeholder-shown) {
+  color: theme("colors.white");
+  border-bottom-color: white;
+  caret-color: theme("colors.red");
+}
+.login-form-container > form > .email-field > label > input:not(:placeholder-shown) {
+  color: theme("colors.white");
+  border-bottom-color: white;
+  caret-color: theme("colors.red");
+}
+.login-form-container > form > input[type=submit] {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: theme("colors.white");
+  background-color: theme("colors.red");
+  border-radius: 0.5rem;
+  font-family: theme("fonts.fontFamily");
+  font-size: clamp(0.9375rem, 0.95vw, 0.96rem);
+  font-weight: theme("fonts.fontWeight.light");
+  line-height: auto;
+}
+.login-form-container > form > input[type=submit]:hover, .login-form-container > form > input[type=submit] :active {
+  background-color: theme("colors.white");
+  color: theme("colors.lightDark");
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.login-form-container > .users-signup-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+  align-items: center;
+}
+.login-form-container > .users-signup-option > .signup-asked,
+.login-form-container > .users-signup-option .singup-link {
+  color: theme("colors.white");
+  font-size: clamp(0.9375rem, 0.95vw, 0.96rem);
+  font-family: theme("fonts.fontFamily");
+  font-weight: theme("fonts.fontWeight.light");
+  text-align: center;
+}
+.login-form-container > .users-signup-option > .singup-link {
+  color: theme("colors.red");
+  cursor: pointer;
+}
+
+.errorStyle {
+  position: absolute;
+  color: theme("colors.red");
+  font-size: clamp(0.8125rem, 0.82vw, 0.82rem);
+  right: 5%;
+  transition: all 0.5s;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.container-animation {
+  animation: slideInFromLeft 0.5s ease-in-out;
+}/*# sourceMappingURL=authStyles.css.map */
